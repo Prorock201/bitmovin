@@ -1,0 +1,158 @@
+.overlay {
+  background: black;
+  opacity: 0.5;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.container-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: table;
+}
+.container {
+  display: table-cell;
+  vertical-align: middle;
+}
+.player-wrapper {
+  width: 80%;
+  min-width: 260px;
+  margin: 0 auto;
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
+}
+#player {
+  position: relative;  
+  z-index: 200;
+}
+.bitdash-watermark, #boxclose, #animationcontainer {
+  display: none;
+}
+#animationcontainer {
+  width: 150px;
+  height: 43px;
+  position: absolute;
+  top: 6%;
+  right: 4%;
+  background: url(../img/download-button-plain2.png) no-repeat;
+  z-index: 3000;
+}
+#download {
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+}
+.boxclose:before {
+  content: "×";
+}
+a.boxclose {
+  float: right;
+  margin-top: -15px;
+  margin-right: -15px;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 30px;
+  background: #605F61;
+  font-size: 31px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 11px 3px;       
+}
+
+/*media request*/
+@media screen and (max-width: 767px) {
+  #animationcontainer {
+    top: 7%;
+    right: 2%;
+    background-size: 90% 90%;
+  }
+  a.boxclose{
+    margin-right: 0px;
+  }
+  #download {
+    width: 90%;
+    height: 90%;
+  }
+}
+@media screen and (max-width: 664px) {
+  #animationcontainer {
+    top: 9%;
+    right: 1%;
+  }
+}
+@media screen and (max-width: 479px) {
+  .player-wrapper {
+    width: 97%;
+  }
+  #animationcontainer {
+    top: 11%;
+    right: -2%;
+    background-size: 80% 80%;
+  }
+  a.boxclose{
+    margin-right: 15px;
+  }
+  #download {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+/*animation*/
+.slideRight {
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight; 
+
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease-in-out; 
+  -webkit-animation-timing-function: ease-in-out;   
+
+  visibility: visible !important; 
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-650%);
+  }
+  50%{
+    transform: translateX(32%);
+  }
+  65%{
+    transform: translateX(-16%);
+  }
+  80%{
+    transform: translateX(16%);
+  }
+  95%{
+    transform: translateX(-8%);
+  }     
+  100% {
+    transform: translateX(0%);
+  } 
+}
+@-webkit-keyframes slideRight {
+  0% {
+    -webkit-transform: translateX(-150%);
+  }
+  50%{
+    -webkit-transform: translateX(8%);
+  }
+  65%{
+    -webkit-transform: translateX(-4%);
+  }
+  80%{
+    -webkit-transform: translateX(4%);
+  }
+  95%{
+    -webkit-transform: translateX(-2%);
+  }     
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}

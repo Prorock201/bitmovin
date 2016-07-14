@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 2</title>
+</head>
+<body>
+	<div>Page 2</div>
+
+		<button id="gotopage">Go to Page 1</button>
+	<script>
+
+		let link = document.getElementById('gotopage');
+		link.onclick = goToAnotherPage;
+
+		function goToAnotherPage() {
+			window.location = "index.html";
+		};
+	</script>
+</body>
+</html>
